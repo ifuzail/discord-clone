@@ -1,4 +1,5 @@
-import ChatHeader from "@/components/chat/ChatHeader";
+
+import { ChatHeader } from "@/components/chat/ChatHeader";
 import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
 
@@ -43,7 +44,11 @@ const ChannelIdPage = async ({
 
   return (
     <div className="bg-white dark:bg-[#313338] flex flex-col h-full">
-      <ChatHeader />
+      <ChatHeader 
+        name={channel.name}
+        serverId={channel.serverId}
+        type='channel'
+      />
     </div>
   )
 }
